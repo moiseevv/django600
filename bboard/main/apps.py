@@ -1,4 +1,13 @@
 from django.apps import AppConfig
+from django.dispatch import Signal
+from .utilities import send_activation_notification
+
+user_registered = Signal(providing_args=['instance'])
+
+def user_register_dispatcher(sender, **kwargs):
+    send_activation_notification(kwargs['instance'])
+
+user_registered.connect(user_register_dispatcher)
 
 
 class MainConfig(AppConfig):
