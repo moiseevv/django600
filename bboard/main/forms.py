@@ -8,7 +8,7 @@ from .apps import user_registered
 class RegisterUserForm(forms.ModelForm):
     email = forms.EmailField(required = True, label = 'Адрес электронной почты')
     password1 = forms.CharField(label = 'Пароль', widget =forms.PasswordInput,
-                                help_text = password_validation.password_validator_help_text_html())
+                                help_text = password_validation.password_validators_help_text_html())
     password2 = forms.CharField(label = 'Пароль(повторно)', widget = forms.PasswordInput,
                                 help_text='Введите тот же самый пароль еще раз')
     def clean_password(self):
@@ -35,7 +35,7 @@ class RegisterUserForm(forms.ModelForm):
         return user
     class Meta:
         model = AdvUser
-        fields = ('username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'send_messages')
+        fields = ('username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'send_messager')
 class ChangeUserInfoForm(forms.ModelForm):
     email = forms.EmailField(required=True, label='Адрес электронной почты')
     class Meta:
