@@ -2,6 +2,6 @@
 Вы зарегистрировались на сайте Доска объявлений
 
 перейдите по ссылке
-{{host}}{% url 'main:register_activate' sign = sign %}
+{{host}} {% url 'main:register_activate' sign=sign %}
 
  С уважением администрация сайта
