@@ -106,3 +106,6 @@ def other_page(request, page):
 @login_required
 def profile(request):
     return render(request, 'main/profile.html')
+
+def by_rubric(request, pk):
+    pass
