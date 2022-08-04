@@ -44,12 +44,12 @@ class RegisterUserForm(forms.ModelForm):
         return user
     class Meta:
         model = AdvUser
-        fields = ('username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'send_messager')
+        fields = ('username', 'email', 'password1', 'password2', 'first_name', 'last_name', 'send_messages')
 class ChangeUserInfoForm(forms.ModelForm):
     email = forms.EmailField(required=True, label='Адрес электронной почты')
     class Meta:
         model = AdvUser
-        fields = ('username', 'email', 'first_name', 'last_name', 'send_messager')
+        fields = ('username', 'email', 'first_name', 'last_name', 'send_messages')
 
 
 
