@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class AdvUser(AbstractUser):
     is_activated = models.BooleanField(default=True, db_index = True, verbose_name = "Прошел активацию?")
-    send_messager = models.BooleanField(default = True, verbose_name = "Слать оповещение о новом комментарии?")
+    send_messages = models.BooleanField(default = True, verbose_name = "Слать оповещение о новом комментарии?")
     class Meta(AbstractUser.Meta):
         pass
 
