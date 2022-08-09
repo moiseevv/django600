@@ -13,9 +13,9 @@ class Rubric(models.Model):
     order = models.SmallIntegerField(default=0, db_index=True, verbose_name='Порядок')
     super_rubric = models.ForeignKey('SuperRubric', on_delete=models.PROTECT, null=True, blank=True, verbose_name='Надрубрика')
 
-class SuperRubricManager(models.Manager):
+class SuperRubricManager(models.Model):
     def get_queryset(self):
-        return super().get_queryset().filter(super_rubric__isnull = True)
+        return super().get_queryset().filter(super_rubric__isnull=True)
 
 class SuperRubric(Rubric):
     objects = SuperRubricManager()
